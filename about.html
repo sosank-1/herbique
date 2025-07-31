@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Herbique - Natural Cosmetics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #2C2C2C;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-pattern {
+      background-image: radial-gradient(circle, #e4f5e8 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .ingredient-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .team-member:hover img {
+      transform: scale(1.05);
+    }
+
+    .leaf-decoration {
+      position: absolute;
+      opacity: 0.08;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center">
+        <a href="new.html" class="text-2xl font-bold text-green-700">HERBIQUE</a>
+      </div>
+      <div class="hidden md:flex space-x-8">
+        <a href="about.html" class="font-medium text-green-700">About</a>
+        <a href="contact.html" class="text-gray-600 hover:text-green-700 transition">Contact</a>
+      </div>
+      <button class="md:hidden">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative hero-pattern pt-20 pb-32 overflow-hidden">
+    <div class="leaf-decoration top-10 left-0 w-64 h-64">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#3A8B66" d="M42.3,-67.8C51,-54.5,51.6,-37.6,58.2,-21.3C64.7,-5,77.3,10.8,76.5,25.6C75.7,40.5,61.5,54.5,45.3,60.2C29.1,65.8,10.9,63,-6.5,71.4C-23.9,79.8,-47.8,99.3,-59.5,96C-71.2,92.8,-70.7,66.7,-67,45.6C-63.3,24.5,-56.4,8.3,-52.7,-7.9C-49,-24.1,-48.5,-40.2,-41,-53.9C-33.4,-67.6,-18.7,-79,-0.5,-78.5C17.7,-78,35.4,-65.7,42.3,-67.8Z" transform="translate(100 100)"/>
+      </svg>
+    </div>
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-12 md:mb-0">
+        <h1 class="text-4xl md:text-6xl font-bold text-green-800 mb-6">Rooted in Nature, Crafted with Care</h1>
+        <p class="text-lg text-gray-600 mb-8 max-w-lg">At Herbique, we believe in the power of nature to nurture and transform. Our ethically-sourced, plant-based formulations bring out your natural beauty while respecting the earth.</p>
+        <button onclick="location.href='about.html'" class="bg-green-700 hover:bg-green-800 text-white px-8 py-3 rounded-full font-medium transition">
+          Discover Our Story
+        </button>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cfed2c0e-9cd5-4ca7-ae24-df2ec81145c7.png" alt="Herbique products" class="rounded-lg shadow-xl max-w-full h-auto" />
+      </div>
+    </div>
+  </section>
+
+  <!-- (Rest of your page continues as you already had it: Philosophy, Ingredients, Commitment, CTA, Footer) -->
+
+  <!-- Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.querySelector('.md\\:hidden');
+      const menuItems = document.querySelector('.hidden.md\\:flex');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        menuItems.classList.toggle('hidden');
+        menuItems.classList.toggle('flex');
+        menuItems.classList.toggle('flex-col');
+        menuItems.classList.toggle('absolute');
+        menuItems.classList.toggle('top-16');
+        menuItems.classList.toggle('left-0');
+        menuItems.classList.toggle('right-0');
+        menuItems.classList.toggle('bg-white');
+        menuItems.classList.toggle('p-4');
+        menuItems.classList.toggle('shadow-lg');
+      });
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
+
+    <!-- Our Philosophy -->
+    <section class="py-20 bg-green-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-600 font-medium">OUR PHILOSOPHY</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2">Purity. Potency. Purpose.</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-700" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 2 2 0 010 2.828l-3 3a2 2 0 01-2.828-2.828l3-3a2 2 0 012.828 0 1 1 0 001.414-1.414 2 2 0 010-2.828l3-3a2 2 0 010-2.828z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Ethical Sourcing</h3>
+                    <p class="text-gray-600">We partner with sustainable farms and cooperatives that share our commitment to environmental stewardship.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Clean Formulas</h3>
+                    <p class="text-gray-600">Our products contain at least 95% natural origin ingredients, with no synthetic fragrances or harsh chemicals.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-sm text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Transparent Testing</h3>
+                    <p class="text-gray-600">Every formula undergoes rigorous dermatological testing and is confirmed non-irritating for sensitive skin.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- Ingredient Highlights -->
+    <section class="py-20 bg-green-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-green-300 font-medium">OUR SIGNATURE INGREDIENTS</span>
+                <h2 class="text-3xl md:text-4xl font-bold mt-2">Nature's Most Potent Elixirs</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="ingredient-card bg-white bg-opacity-10 p-6 rounded-xl transition duration-300 border border-white border-opacity-15">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b38cb5d5-7e56-4bbd-b373-b3cd7c5dce27.png" alt="Close-up of organic turmeric roots freshly harvested with soil still on roots" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Organic Turmeric</h3>
+                    <p class="text-green-100 text-opacity-80">Powerful anti-inflammatory that brightens skin and reduces hyperpigmentation.</p>
+                </div>
+                
+                <div class="ingredient-card bg-white bg-opacity-10 p-6 rounded-xl transition duration-300 border border-white border-opacity-15">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/76bc2418-3476-4a2d-a01d-69ab7276c21b.png" alt="Fresh aloe vera leaves cut open showing the gel inside on a wooden surface" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cold-Pressed Aloe</h3>
+                    <p class="text-green-100 text-opacity-80">Deeply hydrating and packed with skin-repairing polysaccharides and vitamins.</p>
+                </div>
+                
+                <div class="ingredient-card bg-white bg-opacity-10 p-6 rounded-xl transition duration-300 border border-white border-opacity-15">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/727e59e9-c29c-44cd-b004-b885addb113e.png" alt="Cluster of fresh gotu kola leaves with vibrant green color and delicate texture" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Gotu Kola</h3>
+                    <p class="text-green-100 text-opacity-80">Stimulates collagen production and improves skin's structural integrity.</p>
+                </div>
+                
+                <div class="ingredient-card bg-white bg-opacity-10 p-6 rounded-xl transition duration-300 border border-white border-opacity-15">
+                    <div class="w-full h-48 rounded-lg overflow-hidden mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/97c10288-4a86-4d88-bcec-4e8188d3d85c.png" alt="Handful of neem leaves with their distinct jagged edges and rich green color" class="w-full h-full object-cover" />
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Neem Leaf</h3>
+                    <p class="text-green-100 text-opacity-80">Naturally antibacterial and cleansing for acne-prone or reactive skin types.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Commitment -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-16">
+                    <span class="text-green-600 font-medium">OUR COMMITMENT</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-6">Sustainable Beauty, Inside and Out</h2>
+                    <p class="text-gray-600 mb-5">We measure our success not just by healthy skin, but by a healthy planet. That's why sustainability informs every aspect of our business—from sourcing to packaging to community initiatives.</p>
+                    
+                    <div class="space-y-4 mt-8">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-gray-600">All packaging is 100% recyclable. Glass bottles and aluminum tins are made with 30% post-consumer recycled content.</p>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-gray-600">We offset 200% of our carbon emissions through reforestation partnerships in the Amazon and Indonesia.</p>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <p class="ml-3 text-gray-600">1% of all revenue supports women-led farming cooperatives in our supply chain regions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-green-50 p-8 rounded-xl">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7d05e715-00ff-4f62-965e-9a96653106e0.png" alt="Reusable Herbique packaging being refilled at a store with bamboo shelves full of products" class="rounded-lg shadow-md mb-6" />
+                        <div class="text-center">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3">Join Our Refill Revolution</h3>
+                            <p class="text-gray-600 mb-6">Bring any Herbique container to one of our stores or partner locations for a 15% discount on refills.</p>
+                            <button class="bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-full font-medium transition">Find a Refill Station</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- CTA Section -->
+    <section class="py-16 bg-green-700 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Herbal Skincare That Works?</h2>
+            <p class="text-xl text-green-100 max-w-2xl mx-auto mb-8">Join thousands who've transformed their skin with nature's purest ingredients. Try risk-free with our 30-day satisfaction guarantee.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-white hover:bg-gray-100 text-green-800 px-8 py-3 rounded-full font-medium transition">Shop the Collection</button>
+                <button class="border-2 border-white hover:bg-white hover:bg-opacity-10 px-8 py-3 rounded-full font-medium transition">Book a Consultation</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-white text-xl font-bold mb-4">HERBIQUE</h3>
+                    <p class="mb-4 leading-relaxed">Plant-powered skincare that delivers visible results without compromise.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-lg font-medium mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="new.html" class="hover:text-white transition">Skincare</a></li>
+                        <li><a href="new.html" class="hover:text-white transition">Body Care</a></li>
+                        <li><a href="new.html" class="hover:text-white transition">Hair Care</a></li>
+                        <li><a href="new.html" class="hover:text-white transition">Gift Sets</a></li>
+                        <li><a href="new.html" class="hover:text-white transition">New Arrivals</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-lg font-medium mb-4">About</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-white transition">Our Story</a></li>
+                        <li><a href="about.html" class="hover:text-white transition">Ingredients</a></li>>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white text-lg font-medium mb-4">Help</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
+                <p>© 2023 Herbique. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('.md\\:hidden');
+            const menuItems = document.querySelector('.hidden.md\\:flex');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                menuItems.classList.toggle('hidden');
+                menuItems.classList.toggle('flex');
+                menuItems.classList.toggle('flex-col');
+                menuItems.classList.toggle('absolute');
+                menuItems.classList.toggle('top-16');
+                menuItems.classList.toggle('left-0');
+                menuItems.classList.toggle('right-0');
+                menuItems.classList.toggle('bg-white');
+                menuItems.classList.toggle('p-4');
+                menuItems.classList.toggle('shadow-lg');
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
