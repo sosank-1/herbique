@@ -20,41 +20,15 @@
       height: 450px;
       border-radius: 12px;
     }
-
     .zoom-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-
     .zoom-container:hover .zoom-image {
       transform: scale(1.5);
       cursor: zoom-in;
-    }
-
-    .size-btn {
-      border: 1.5px solid #d1d5db;
-      color: #4b5563;
-      background-color: white;
-      border-radius: 9999px;
-      padding: 0.5rem 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .size-btn:hover {
-      border-color: #b91c1c;
-      color: #b91c1c;
-      background-color: #fef2f2;
-    }
-
-    .size-btn.selected {
-      background-color: #b91c1c;
-      border-color: #b91c1c;
-      color: white;
-      font-weight: 700;
     }
   </style>
 </head>
@@ -71,51 +45,54 @@
           <a href="about.html" class="hover:text-red-900 transition">About Us</a>
         </nav>
       </div>
-      <div class="flex items-center space-x-4 text-gray-700">
-        <!-- Icons -->
-      </div>
     </div>
   </header>
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
     <div class="flex flex-col lg:flex-row gap-12">
-      
+
       <!-- Image Gallery -->
       <section class="lg:w-2/3">
         <div class="flex flex-wrap gap-6">
           <div class="zoom-container">
-            <img src="Soap front.png" alt="Herbique Face Pack" class="zoom-image" />
+            <img src="Natural Beauty Treatments with Multani Mitti.png" alt="Herbique Face Pack" class="zoom-image" />
           </div>
           <div class="zoom-container">
-            <img src="Soap back.png" alt="Herbique Face Pack Back" class="zoom-image" />
+            <img src="facepack back.png" alt="Herbique Face Pack Back" class="zoom-image" />
           </div>
         </div>
       </section>
 
       <!-- Product Details -->
       <section class="lg:w-1/3 flex flex-col justify-start space-y-8">
-        <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">Herbique Soap</h1>
+        <h1 class="text-3xl font-extrabold tracking-tight text-gray-900">Herbique Face Pack</h1>
         <div>
-          <p class="text-xl font-semibold text-red-900">₹69.00</p>
-          <p class="text-gray-400 line-through">₹119.00</p>
+          <p id="price" class="text-xl font-semibold text-red-900">₹149.00</p>
+          <p class="text-gray-400 line-through">₹199.00</p>
         </div>
 
-        <!-- Size Selection -->
-       
-
-        <!-- Quantity + Add to Cart -->
+        <!-- Quantity Selector -->
         <div class="flex flex-wrap gap-4 items-center">
           <div class="flex items-center border border-gray-300 rounded-md overflow-hidden max-w-[120px]">
             <button id="decreaseQty" class="w-10 h-10 text-red-900 font-extrabold text-xl hover:bg-red-50">−</button>
             <input id="qtyInput" value="1" class="w-full text-center text-gray-900 font-semibold border-l border-r border-gray-300" readonly />
             <button id="increaseQty" class="w-10 h-10 text-red-900 font-extrabold text-xl hover:bg-red-50">+</button>
           </div>
+        </div>
 
-         
+        <!-- Coupon Code Input -->
+        <div>
+          <label for="coupon" class="block text-sm font-medium text-gray-700 mb-1">Have a coupon?</label>
+          <div class="flex items-center gap-2">
+            <input type="text" id="coupon" class="border rounded-md px-3 py-2 w-full" placeholder="Enter code" />
+            <button id="applyCoupon" class="bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-700 transition">Apply</button>
+          </div>
+          <p id="couponMessage" class="text-green-600 text-sm mt-2 hidden">Coupon applied! ₹30 off.</p>
+        </div>
 
-       <!-- Buy Button -->
-        <a href="https://forms.gle/JeX5BM9z8PG7JJv6A" target="_blank" class="w-full bg-red-900 text-white px-5 py-3 rounded-md font-semibold hover:bg-red-700 transition text-center block">
+        <!-- Buy Button -->
+        <a id="buyNowBtn" href="https://forms.gle/JeX5BM9z8PG7JJv6A" target="_blank" class="w-full bg-red-900 text-white px-5 py-3 rounded-md font-semibold hover:bg-red-700 transition text-center block">
           Buy it now
         </a>
 
@@ -123,23 +100,23 @@
         <article class="text-gray-700 text-sm leading-relaxed space-y-3">
           <p>Herbique Face Pack is made with natural ingredients that cleanse, nourish, and revitalize your skin.</p>
           <ul class="list-disc pl-5 space-y-1">
-            <li>Herbique – The Essence of Pure Nature</li>
+            <p>
+              Herbique – Organic Face Mask  
+              Glow Naturally. Breathe Botanicals.
 
-<p>Indulge your skin in the gentle luxury of Herbique, an all-natural, handcrafted organic soap made with the finest botanical ingredients. Infused with the goodness of soothing herbs, nourishing oils, and nature’s most healing elements, Herbique cleanses without stripping your skin of its natural moisture.
+              Revitalize your skin with the power of nature. The Herbique Organic Face Mask is a luxurious blend of earth-derived clays, pure herbal extracts, and nourishing botanicals — designed to detoxify, soothe, and restore your natural glow.
 
-Free from harsh chemicals, parabens, and artificial fragrances, Herbique is ideal for all skin types – even the most sensitive. With every use, experience a rich, creamy lather and the calming aroma of nature, leaving your skin soft, refreshed, and naturally radiant.
+              Crafted for all skin types, this mask draws out impurities, tightens pores, and leaves your skin feeling balanced, hydrated, and refreshed. Infused with ingredients like aloe vera, neem, green tea, and turmeric, it helps combat dullness, acne, and uneven tone without any harsh chemicals.
 
-✨ Why Choose Herbique?
+              🌿 Key Benefits:
 
-Made with organic herbal extracts
+              Gently detoxifies & deep cleanses  
+              Fights breakouts and soothes inflammation  
+              Evens skin tone & boosts radiance  
+              100% organic, vegan & cruelty-free
 
-Cold-processed to retain nutrients
-
-Cruelty-free & eco-conscious
-
-Gently scented with essential oils
-
-Herbique – where purity meets elegance. Let your skin breathe nature.</p>
+              Let Herbique be your skin’s weekly ritual — a moment of calm, a breath of nature, a glow that’s truly yours.
+            </p>
           </ul>
         </article>
       </section>
@@ -155,37 +132,56 @@ Herbique – where purity meets elegance. Let your skin breathe nature.</p>
 
   <!-- Script -->
   <script>
-    const sizeButtons = document.querySelectorAll('.size-btn');
-    sizeButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        sizeButtons.forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-      });
-    });
-
     const decreaseQtyBtn = document.getElementById('decreaseQty');
     const increaseQtyBtn = document.getElementById('increaseQty');
     const qtyInput = document.getElementById('qtyInput');
+    const couponInput = document.getElementById('coupon');
+    const applyCouponBtn = document.getElementById('applyCoupon');
+    const couponMessage = document.getElementById('couponMessage');
+    const priceText = document.getElementById('price');
+    const buyNowBtn = document.getElementById('buyNowBtn');
+
+    let basePrice = 149;
+    let discountApplied = false;
+
+    const normalLink = "https://forms.gle/JeX5BM9z8PG7JJv6A";
+    const discountLink = "https://forms.gle/mWj9J9PQ2kzoqbUR6";
 
     decreaseQtyBtn.addEventListener('click', () => {
       let qty = parseInt(qtyInput.value);
-      if (qty > 1) qtyInput.value = qty - 1;
+      if (qty > 1) {
+        qtyInput.value = qty - 1;
+        updatePrice();
+      }
     });
 
     increaseQtyBtn.addEventListener('click', () => {
       let qty = parseInt(qtyInput.value);
       qtyInput.value = qty + 1;
+      updatePrice();
     });
 
-    document.getElementById('addToCartBtn').addEventListener('click', () => {
-      const size = document.querySelector('.size-btn.selected').dataset.size;
-      alert(`Added ${qtyInput.value} x ${size} to cart.`);
+    applyCouponBtn.addEventListener('click', () => {
+      const code = couponInput.value.trim().toUpperCase();
+      if (code === "SOS30") {
+        discountApplied = true;
+        couponMessage.classList.remove('hidden');
+        buyNowBtn.href = discountLink;
+      } else {
+        discountApplied = false;
+        couponMessage.classList.add('hidden');
+        alert("Invalid coupon code.");
+        buyNowBtn.href = normalLink;
+      }
+      updatePrice();
     });
 
-    document.getElementById('buyNowBtn').addEventListener('click', () => {
-      const size = document.querySelector('.size-btn.selected').dataset.size;
-      alert(`Proceeding to buy ${qtyInput.value} x ${size}.`);
-    });
+    function updatePrice() {
+      const qty = parseInt(qtyInput.value);
+      let price = basePrice;
+      if (discountApplied) price -= 30;
+      priceText.textContent = `₹${price * qty}.00`;
+    }
   </script>
 
 </body>
