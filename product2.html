@@ -88,7 +88,7 @@
             <input type="text" id="coupon" class="border rounded-md px-3 py-2 w-full" placeholder="Enter code" />
             <button id="applyCoupon" class="bg-red-900 text-white px-4 py-2 rounded-md hover:bg-red-700 transition">Apply</button>
           </div>
-          <p id="couponMessage" class="text-green-600 text-sm mt-2 hidden">Coupon applied! ₹30 off.</p>
+          <p id="couponMessage" class="text-green-600 text-sm mt-2 hidden">Coupon applied! 30% off.</p>
         </div>
 
         <!-- Buy Button -->
@@ -99,24 +99,16 @@
         <!-- Description -->
         <article class="text-gray-700 text-sm leading-relaxed space-y-3">
           <ul class="list-disc pl-5 space-y-1">
-              <p>Herbique – The Essence of Pure Nature
-
-Indulge your skin in the gentle luxury of Herbique, an all-natural, handcrafted organic soap made with the finest botanical ingredients. Infused with the goodness of soothing herbs, nourishing oils, and nature’s most healing elements, Herbique cleanses without stripping your skin of its natural moisture.
-
-Free from harsh chemicals, parabens, and artificial fragrances, Herbique is ideal for all skin types – even the most sensitive. With every use, experience a rich, creamy lather and the calming aroma of nature, leaving your skin soft, refreshed, and naturally radiant.
-
-✨ Why Choose Herbique?
-
-Made with organic herbal extracts
-
-Cold-processed to retain nutrients
-
-Cruelty-free & eco-conscious
-
-Gently scented with essential oils
-
-Herbique – where purity meets elegance. Let your skin breathe nature
-              Let Herbique be your skin’s weekly ritual — a moment of calm, a breath of nature, a glow that’s truly yours.</p>
+            <p>
+              <strong>Herbique – The Essence of Pure Nature</strong><br><br>
+              Indulge your skin in the gentle luxury of Herbique, an all-natural, handcrafted organic soap made with the finest botanical ingredients. Infused with the goodness of soothing herbs, nourishing oils, and nature’s most healing elements, Herbique cleanses without stripping your skin of its natural moisture.<br><br>
+              Free from harsh chemicals, parabens, and artificial fragrances, Herbique is ideal for all skin types – even the most sensitive. With every use, experience a rich, creamy lather and the calming aroma of nature, leaving your skin soft, refreshed, and naturally radiant.
+            </p>
+            <li>Made with organic herbal extracts</li>
+            <li>Cold-processed to retain nutrients</li>
+            <li>Cruelty-free & eco-conscious</li>
+            <li>Gently scented with essential oils</li>
+            <p><strong>Herbique – where purity meets elegance. Let your skin breathe nature.</strong></p>
           </ul>
         </article>
       </section>
@@ -141,7 +133,7 @@ Herbique – where purity meets elegance. Let your skin breathe nature
     const priceText = document.getElementById('price');
     const buyNowBtn = document.getElementById('buyNowBtn');
 
-    let basePrice = 69;
+    const basePrice = 69;
     let discountApplied = false;
 
     const normalLink = "https://forms.gle/JeX5BM9z8PG7JJv6A";
@@ -165,6 +157,7 @@ Herbique – where purity meets elegance. Let your skin breathe nature
       const code = couponInput.value.trim().toUpperCase();
       if (code === "SOS30") {
         discountApplied = true;
+        couponMessage.textContent = "Coupon applied! 30% off.";
         couponMessage.classList.remove('hidden');
         buyNowBtn.href = discountLink;
       } else {
@@ -178,9 +171,11 @@ Herbique – where purity meets elegance. Let your skin breathe nature
 
     function updatePrice() {
       const qty = parseInt(qtyInput.value);
-      let price = basePrice;
-      if (discountApplied) price -= 30;
-      priceText.textContent = `₹${price * qty}.00`;
+      let total = basePrice * qty;
+      if (discountApplied) {
+        total *= 0.7; // 30% off
+      }
+      priceText.textContent = `₹${total.toFixed(2)}`;
     }
   </script>
 
