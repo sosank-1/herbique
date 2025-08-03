@@ -155,9 +155,9 @@
 
     applyCouponBtn.addEventListener('click', () => {
       const code = couponInput.value.trim().toUpperCase();
-      if (code === "SOS90") {
+      if (code === "SOS30") {
         discountApplied = true;
-        couponMessage.textContent = "Coupon applied! 90% off.";
+        couponMessage.textContent = "Coupon applied! 30% off.";
         couponMessage.classList.remove('hidden');
         buyNowBtn.href = discountLink;
       } else {
@@ -173,7 +173,7 @@
       const qty = parseInt(qtyInput.value);
       let total = basePrice * qty;
       if (discountApplied) {
-        total *= 0.1; // 30% off
+        total *= 0.7; // 30% off
       }
       priceText.textContent = `₹${total.toFixed(2)}`;
     }
